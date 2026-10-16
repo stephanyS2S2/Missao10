@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Missão 10 — Desafio dos Exploradores</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="game">
+    <header class="topo">
+      <div>
+        <p class="eyebrow">OPERAÇÃO ESTAÇÃO ESPACIAL</p>
+        <h1>🚀 Missão 10</h1>
+      </div>
+      <p id="fase" class="fase">Fase 1 de 3</p>
+    </header>
+
+    <p class="intro">Resolva 10 desafios para recuperar os fragmentos de energia. Todas as somas têm resultado máximo igual a 10.</p>
+
+    <section class="stats" aria-label="Progresso da missão">
+      <div class="stat"><span>Pontos</span><strong id="pontos">0</strong></div>
+      <div class="stat"><span>Fragmentos</span><strong id="fragmentos">0/10</strong></div>
+      <div class="stat"><span>Vidas</span><strong id="vidas">❤️❤️❤️</strong></div>
+    </section>
+
+    <div class="progress" aria-label="Progresso dos fragmentos">
+      <div id="barra" class="progress-fill"></div>
+    </div>
+
+    <section class="challenge" aria-live="polite">
+      <p id="tipo" class="challenge-type">DESAFIO DE AQUECIMENTO</p>
+      <div id="operacao" class="operation">3 + 4 = ?</div>
+      <p id="instrucao" class="instruction">Escolha o resultado correto.</p>
+      <div id="respostas" class="answers">
+        <button class="answer" type="button">7</button>
+        <button class="answer" type="button">6</button>
+        <button class="answer" type="button">8</button>
+        <button class="answer" type="button">5</button>
+      </div>
+      <p id="feedback" class="feedback" aria-live="polite">Cada acerto vale 10 pontos.</p>
+      <button id="proximo" class="button primary next" type="button" hidden>Próximo desafio →</button>
+    </section>
+
+    <section class="achievements">
+      <h2>🏅 Registro de conquistas</h2>
+      <p id="conquistas">Suas medalhas aparecerão durante a missão.</p>
+    </section>
+
+    <div class="actions">
+      <button id="reiniciar" class="button" type="button">↻ Reiniciar missão</button>
+    </div>
+    <p class="footer-note">Dica para quem aplica a atividade: valorize as estratégias de cálculo mental, não apenas a velocidade.</p>
+  </main>
+</body>
+</html>

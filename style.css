@@ -1,0 +1,247 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --background: #101827;
+  --panel: #192538;
+  --panel-light: #22334b;
+  --text: #f4f7fb;
+  --muted: #b4c0d0;
+  --accent: #70d6c4;
+  --accent-dark: #173c3a;
+  --border: #34465f;
+  --success: #a5e8b2;
+  --error: #ffb5b5;
+}
+
+body {
+  margin: 0;
+  padding: 24px 14px;
+  background: var(--background);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+.game {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.eyebrow,
+.challenge-type {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+}
+
+h1 {
+  margin: 4px 0 0;
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+}
+
+.fase {
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.intro {
+  color: var(--muted);
+  margin: 14px 0 20px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.stat {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 8px;
+  text-align: center;
+  min-width: 0;
+}
+
+.stat span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.stat strong {
+  display: block;
+  margin-top: 4px;
+  font-size: clamp(1.05rem, 4vw, 1.4rem);
+  overflow-wrap: anywhere;
+}
+
+.progress {
+  height: 9px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: var(--panel-light);
+  margin-bottom: 18px;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0;
+  background: var(--accent);
+  transition: width 0.2s ease;
+}
+
+.challenge,
+.achievements {
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--panel);
+}
+
+.challenge {
+  text-align: center;
+}
+
+.operation {
+  padding: 18px 0 10px;
+  font-size: clamp(2.5rem, 10vw, 4rem);
+  font-weight: 800;
+}
+
+.instruction,
+.achievements p {
+  color: var(--muted);
+}
+
+.answers {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.answer {
+  min-height: 58px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: var(--panel-light);
+  color: var(--text);
+  font: inherit;
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.answer:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: var(--accent-dark);
+}
+
+.answer:disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+
+.answer:focus-visible,
+.button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.feedback {
+  min-height: 26px;
+  margin: 10px 0;
+  font-weight: 600;
+}
+
+.button {
+  min-height: 46px;
+  padding: 10px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button:hover {
+  border-color: var(--accent);
+}
+
+.primary {
+  color: #102521;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.next {
+  width: 100%;
+}
+
+.achievements {
+  margin-top: 14px;
+}
+
+.achievements h2 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.achievements p {
+  margin-bottom: 0;
+}
+
+.actions {
+  margin-top: 14px;
+}
+
+.footer-note {
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 420px) {
+  body {
+    padding: 18px 10px;
+  }
+
+  .challenge,
+  .achievements {
+    padding: 15px;
+  }
+
+  .answers {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .topo {
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-fill {
+    transition: none;
+  }
+}
